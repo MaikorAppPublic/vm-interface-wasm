@@ -1,9 +1,8 @@
-use std::sync::Mutex;
 use lazy_static::lazy_static;
 use maikor_asm_parser::line::parse_line;
-use maikor_asm_parser::ParserError;
-use wasm_bindgen::prelude::*;
 use maikor_vm_interface::VMHost;
+use std::sync::Mutex;
+use wasm_bindgen::prelude::*;
 
 lazy_static! {
     static ref VM_INSTANCE: Mutex<VMHost> = Mutex::new(VMHost::new());
@@ -34,6 +33,6 @@ pub fn execute_statement(text: String) -> Option<String> {
             VM_INSTANCE.lock().unwrap().vm.execute_op(&bytes);
             None
         }
-        Err(err) => Some(err.to_string())
+        Err(err) => Some(err.to_string()),
     }
 }
