@@ -1,0 +1,22 @@
+[package]
+name = "maikor-vm-interface-wasm"
+version = "0.1.0"
+edition = "2021"
+authors = ["Ray Britton <raybritton@pm.me>"]
+description = "VM Interface for WASM"
+license = "MIT"
+repository = "https://github.com/MaikorAppPublic/vm-interface-wasm"
+readme = "README.md"
+homepage = "https://maikor.app"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+maikor-language = "0.1.6"
+maikor-vm-interface = {version="0.1.1", features=["argb"]}
+maikor-asm-parser = "0.1.0"
+wasm-bindgen = "0.2"
+lazy_static = "1.4.0"
+log = "0.4.17"
+wasm-logger = "0.2.0"
