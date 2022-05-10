@@ -17,16 +17,14 @@ jobs:
           profile: minimal
           toolchain: stable
           override: true
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.15.0
-          registry-url: 'https://registry.npmjs.org'
       - name: Install wasm-pack
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
       - run: cargo fmt --all -- --check
       - run: cargo clippy --all-targets -- -D clippy::all
       - run: cargo test
-      - run: wasm-pack build --release
-      - run: wasm-pack publish
+      - run: wasm-pack build --no-typescript --target web --release
+      - uses: softprops/action-gh-release@v1
+        with:
+          files: pkg/maikor_vm_interface_wasm*
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
