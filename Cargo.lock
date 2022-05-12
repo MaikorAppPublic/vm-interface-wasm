@@ -49,9 +49,9 @@ dependencies = [
 
 [[package]]
 name = "maikor-asm-parser"
-version = "0.1.1"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a2fe87666e608f35237306fa7e55480ff308c2995f448ca774da15b7f37814ac"
+checksum = "60e2ea06174d84d47f400b326b42cd6e7cbaa1f5501724ab68b2fbfbb566538f"
 dependencies = [
  "lazy_static",
  "maikor-language",
@@ -61,27 +61,27 @@ dependencies = [
 
 [[package]]
 name = "maikor-language"
-version = "0.1.8"
+version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1b75586ec9525fae032533e75ca160fb36bf4b62a2a1315a26ff401de5ef39c6"
+checksum = "363556f34fcfd961df371c62e3e7020387d3666766d33dbd40653a4bb78cf0a1"
 dependencies = [
  "thiserror",
 ]
 
 [[package]]
 name = "maikor-vm-core"
-version = "0.1.4"
+version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6cbd64360bcbd5361d71f0c76d519565358e292150e1e9c26448127ce445277b"
+checksum = "901b952571cdf6d9ae6e5b00cce758e1265f384c806be51a39fd8d4b82c628a3"
 dependencies = [
  "maikor-language",
 ]
 
 [[package]]
 name = "maikor-vm-interface"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "859986cbbfa94fdfc438feb1125b3312f0c62edba0bee02281a53e13b7b35ab6"
+checksum = "5290d042bf0157901e6b03a9901ca2a2db5d1edb84c52fef2192500a1650959f"
 dependencies = [
  "maikor-language",
  "maikor-vm-core",
@@ -89,7 +89,7 @@ dependencies = [
 
 [[package]]
 name = "maikor-vm-interface-wasm"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "lazy_static",
  "log",
